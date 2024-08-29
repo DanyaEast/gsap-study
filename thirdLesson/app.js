@@ -1,6 +1,6 @@
-let age = 42;
-let age2 = '12';
-age2 = Number(age2);
-age = String(age);
-
-console.log (typeof age, typeof age2)
+let titleProject = 'Оценка стоимости';
+let screensValue = 'шаблонные, с уникальным дизайном, с анимациями';
+let screenPrice = 20000;
+let percentage = 50;
+let fullPrice = 60000;
+let resposive = true;
