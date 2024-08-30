@@ -1,63 +1,52 @@
-// let titleProject = 'Оценка стоимости';
-// let screensValue = 'шаблонные, с уникальным дизайном, с анимациями';
+let titleProject = 'ТРЕТИЙ ПРОЕКТ';
 let screenPrice = 20000;
-// let percentage = 50;
 let fullPrice = 60000;
-// let resposive = true;
+let servicePercentPrice
+let servicePrice1 = 50000
+let servicePrice2 = 20000
+let allServicePrices
 
-// titleProject = prompt ('Название проекта?')
-// screensValue = prompt ('Какие типы экранов?')
-// resposive = prompt ('Нужен ли респонсивный сайт?')
-// //Не нашёл как булевое значение в промпте попросить
-// if (resposive == 'Да') {
-//     resposive = true
-// } else {
-//     resposive = false
-// }
-
-// let service1 = prompt ('Какой сервис нужен?')
-// let servicePrice1 = +prompt ('Сколько это будет стоить?')
-// let service2 = prompt ('Какой еще сервис тебе нужен?')
-// let servicePrice2 = +prompt ('Сколько будет стоить этот второй сервис?')
-// fullPrice = screenPrice + servicePrice1 + servicePrice2
-
-// let servicePercentPrice = Math.round(fullPrice * 0.9)
-
-// console.log (servicePercentPrice)
-
-// if (servicePercentPrice >= 50000) {
-//     alert ('Сделаем скидку 10%')
-// } else if (servicePercentPrice >= 20000) {
-//     alert ('Cделаем скидку 5%')
-// } else if (servicePercentPrice >= 0) {
-//     alert ('Скидка не предусмотрена')
-// } else {
-//     alert ('Что-то пошло не так')
-// }
-
-
-
-// let servicePrice1 = 5
-// let servicePrice2 = 10
-// let allServicePrices = 0
-
-// let getAllServicePrices = function() {
-//     return servicePrice1 + servicePrice2
-// }
-
-// function getFullPrice() {
-//     return allServicePrices + screenPrice
-// }
-
-
-// allServicePrices = getAllServicePrices()
-// fullPrice = getFullPrice()
-let newTitle = 'ABCDE'
-
-function getTitle() {
-    return newTitle.toLowerCase()
+let getAllServicePrices = function() {
+    return servicePrice1 + servicePrice2
 }
 
-let result = getTitle()
-console.log(result)
+function getFullPrice() {
+    return allServicePrices + screenPrice
+}
+
+function getTitle() {
+    let first = titleProject[0].toUpperCase()
+    let last = titleProject.toLowerCase()
+    titleProject = first + last.slice(1)
+}
+
+function getServicePercentPrices() {
+    return Math.round(fullPrice * 0.9)
+}
+
+function getRollbackMessage() {
+    if (servicePercentPrice >= 50000) {
+        console.log ('Ваша скидка составит 10%')
+    } else if (servicePercentPrice >= 20000) {
+        console.log ('Ваша скидка составит 5%')
+    } else if (servicePercentPrice >= 0) {
+        console.log ('Ваша скидка составит 0%')
+    } else {
+        console.log ('Что-то пошло не так')
+    }
+}
+
+allServicePrices = getAllServicePrices()
+console.log('Стоимость всех услуг:', allServicePrices)
+
+fullPrice = getFullPrice()
+console.log('Стоимость всего проекта:', fullPrice)
+
+getTitle()
+console.log('Название проекта:', titleProject)
+
+servicePercentPrice = getServicePercentPrices()
+console.log('Стоимость проекта с учётом скидки подрядчику:', servicePercentPrice)
+
+getRollbackMessage()
 
