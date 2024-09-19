@@ -1,9 +1,8 @@
-let titleProject = 'ТРЕТИЙ ПРОЕКТ'
+let titleProject
 let screenPrice = 20000
-let fullPrice = 60000
 let servicePercentPrice
-let servicePrice1 = 50000
-let servicePrice2 = 20000
+let servicePrice1
+let servicePrice2
 let allServicePrices
 
 let getAllServicePrices = function() {
@@ -40,13 +39,13 @@ function getRollbackMessage() {
     }
 }
 
+
 titleProject = prompt ('Название проекта?')
 screensValue = prompt ('Какие типы экранов?')
 service1 = prompt ('Какой сервис нужен?')
 servicePrice1 = +prompt ('Сколько это будет стоить?')
 service2 = prompt ('Какой еще сервис тебе нужен?')
 servicePrice2 = +prompt ('Сколько будет стоить этот второй сервис?')
-
 
 allServicePrices = getAllServicePrices()
 console.log('Стоимость всех услуг:', allServicePrices)
