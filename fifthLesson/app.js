@@ -1,6 +1,6 @@
-let titleProject = 'ТРЕТИЙ ПРОЕКТ';
-let screenPrice = 20000;
-let fullPrice = 60000;
+let titleProject = 'ТРЕТИЙ ПРОЕКТ'
+let screenPrice = 20000
+let fullPrice = 60000
 let servicePercentPrice
 let servicePrice1 = 50000
 let servicePrice2 = 20000
@@ -15,9 +15,13 @@ function getFullPrice() {
 }
 
 function getTitle() {
-    let first = titleProject[0].toUpperCase()
-    let last = titleProject.toLowerCase()
-    titleProject = first + last.slice(1)
+    titleProject = titleProject.trimStart()
+
+    if (titleProject.length > 0) {
+        let first = titleProject[0].toUpperCase()
+        let last = titleProject.slice(1).toLowerCase()
+        titleProject = first + last
+    }
 }
 
 function getServicePercentPrices() {
@@ -35,6 +39,14 @@ function getRollbackMessage() {
         console.log ('Что-то пошло не так')
     }
 }
+
+titleProject = prompt ('Название проекта?')
+screensValue = prompt ('Какие типы экранов?')
+service1 = prompt ('Какой сервис нужен?')
+servicePrice1 = +prompt ('Сколько это будет стоить?')
+service2 = prompt ('Какой еще сервис тебе нужен?')
+servicePrice2 = +prompt ('Сколько будет стоить этот второй сервис?')
+
 
 allServicePrices = getAllServicePrices()
 console.log('Стоимость всех услуг:', allServicePrices)
