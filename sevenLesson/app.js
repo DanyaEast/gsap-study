@@ -17,9 +17,11 @@ return Math.floor(Math.random() * (max - min) + min)
 
 const gameBotFunction = function () {
     let mysteryNumber = randomGenerate()
+    let moreLess = ""
 
     for (let i = 0; i < triesAmount; i++) {
-        tryNum[i] =  checkIsNumber(prompt(`Попытка: ${i + 1}, Введите число от 0 до 100`))
+        
+        tryNum[i] =  checkIsNumber(prompt(`${moreLess}Попытка: ${i + 1}, Введите число от 0 до 100`))
         if (tryNum[i] == null) {return alert("Вы завершили игру")}
         while (tryNum[i] == false) {
             tryNum[i] =  checkIsNumber(prompt("Число введено некорректно"))
@@ -28,8 +30,9 @@ const gameBotFunction = function () {
         if (tryNum[i] == mysteryNumber) {
             let cont = confirm("Отлично! Вы победили! Хотите начать заново?")
             if (cont) {return gameBotFunction()
-            } else {return alert("Вы завершили игру")}
-        } 
+            } else {return alert("Вы завершили игру")}12
+        }
+        if (tryNum[i] < mysteryNumber) {moreLess = "Загаданное число больше. "} else {moreLess = "Загаданное число меньше. "}
         
     }
     let cont = confirm("Вы проиграли :( , ваши попытки " + tryNum[0] + ", " + tryNum[1] + ", " + tryNum[2] + " оказались не верны. Правильный ответ " + mysteryNumber + ". Хотите попробовать ещё раз?")
