@@ -30,7 +30,7 @@ const gameBotFunction = function () {
         if (tryNum[i] == mysteryNumber) {
             let cont = confirm("Отлично! Вы победили! Хотите начать заново?")
             if (cont) {return gameBotFunction()
-            } else {return alert("Вы завершили игру")}12
+            } else {return alert("Вы завершили игру")}
         }
         if (tryNum[i] < mysteryNumber) {moreLess = "Загаданное число больше. "} else {moreLess = "Загаданное число меньше. "}
         
